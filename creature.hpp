@@ -1,8 +1,8 @@
 //
 // Created by KAVOSH on 8/18/2023.
 //
-#ifndef COVV_GME_CREATURE_H
-#define COVV_GME_CREATURE_H
+#ifndef COVV_GME_CREATURE_HPP
+#define COVV_GME_CREATURE_HPP
 
 #include <string_view>
 
@@ -10,7 +10,7 @@ class Creature{
 
 public:
 
-    explicit Creature(std::string_view name,char symbol,int health,int damage,int gold)
+    Creature(std::string_view name,char symbol,int health,int damage,int gold)
     :m_name{name},
     m_symbol{symbol}, m_health{health},
     m_damage{damage}, m_gold{gold}
@@ -27,7 +27,7 @@ public:
     void reduceHealth(int damage){m_health -= damage;}
     void addGold(int gold){m_gold += gold;}
 
-private:
+protected:
     std::string_view m_name{};
     char m_symbol{};
     int m_health{};
@@ -35,4 +35,4 @@ private:
     int m_gold{};
 };
 
-#endif //COVV_GME_CREATURE_H
+#endif //COVV_GME_CREATURE_HPP
