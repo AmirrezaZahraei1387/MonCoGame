@@ -5,6 +5,7 @@
 #define COVV_GME_POSTION_HPP
 
 #include <random>
+#include "randomg.hpp"
 #include <array>
 #include <cstddef>
 
@@ -30,8 +31,6 @@ public:
 
     static const Potion& getRandomPotion()
     {
-        static std::random_device rd;
-        static std::mt19937 mt{rd()};
 
         static std::array<Potion, static_cast<size_t>(Type::max_type)> data{
                 {{Type::health, 2, 2},
@@ -40,7 +39,7 @@ public:
         };
         std::uniform_int_distribution<> uid(0, static_cast<size_t>(Type::max_type));
 
-        return data.at(uid(mt));
+        return data.at(uid(random::mt));
     }
 
 private:

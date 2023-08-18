@@ -5,6 +5,7 @@
 #define COVV_GME_MONSTER_HPP
 
 #include <random>
+#include "randomg.hpp"
 #include <cstddef>
 #include <array>
 #include "creature.hpp"
@@ -27,10 +28,9 @@ public:
 
     static const Monster getRandomMonster()
     {
-        static std::random_device rd;
-        static std::mt19937 mt{rd()};
+
         std::uniform_int_distribution<> uid(0, static_cast<int>(Type::max_types) - 1);
-        return static_cast<Type>(uid(mt));
+        return static_cast<Type>(uid(random::mt));
     }
 
 private:
