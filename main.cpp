@@ -7,13 +7,10 @@
 
 int main()
 {
-    std::random_device rd{};
-    std::mt19937 mt{rd()};
-
 
     for (int i{ 0 }; i < 10; ++i)
     {
-        Monster m{ Monster::getRandomMonster(mt) };
+        Monster m{ Monster::getRandomMonster() };
         std::cout << "A " << m.getName() << " (" << m.getSymbol() << ") was created.\n";
     }
 

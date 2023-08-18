@@ -28,14 +28,16 @@ public:
     int getHealth() const{return m_health;}
     int getDamage() const{return m_damage;}
 
-    static Potion getRandomPotion(std::mt19937& mt)
+    static const Potion& getRandomPotion()
     {
+        static std::random_device rd;
+        static std::mt19937 mt{rd()};
+
         static std::array<Potion, static_cast<size_t>(Type::max_type)> data{
                 {{Type::health, 2, 2},
                 {Type::strength, 3, 3},
                 {Type::poison, -1, 0}}
         };
-
         std::uniform_int_distribution<> uid(0, static_cast<size_t>(Type::max_type));
 
         return data.at(uid(mt));
