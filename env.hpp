@@ -56,8 +56,12 @@ public:
 
             switch(drink){
                 case input::Drink::Drin:
-                    m_player.drink(potion)
-                    std::cout<<"that was "<<
+                    m_player.drink(potion);
+                    std::cout<<"that was "<<potion<<std::endl;
+                    break;
+                case input::Drink::DoNot:
+                    std::cout<<"ok leave it."<<std::endl;
+                    break;
             }
         }
     }

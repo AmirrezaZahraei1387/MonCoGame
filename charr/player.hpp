@@ -4,6 +4,7 @@
 #ifndef COVV_GME_PLAYER_HPP
 #define COVV_GME_PLAYER_HPP
 
+#include <iostream>
 #include <string_view>
 #include "creature.hpp"
 #include "postion.hpp"
@@ -30,6 +31,15 @@ public:
 
     int getLevel() const{ return m_level;}
     bool hasWon() const{return m_level >= 20;}
+
+    friend inline std::ostream& operator<< (std::ostream& out, Player& player){
+        out<<player.m_name<<" is in level "<<player.m_level<<std::endl;
+        out<<"your status is:"<<std::endl;
+        out<<"health:"<<player.m_health<<std::endl;
+        out<<"damage:"<<player.m_damage<<std::endl;
+        out<<"symbol:"<<player.m_symbol<<std::endl;
+        return out;
+    }
 
 private:
     int m_level{1};

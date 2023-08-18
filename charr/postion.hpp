@@ -4,6 +4,7 @@
 #ifndef COVV_GME_POSTION_HPP
 #define COVV_GME_POSTION_HPP
 
+#include <iostream>
 #include <random>
 #include "../randomg.hpp"
 #include <array>
@@ -27,13 +28,7 @@ public:
 
     Type getType() const{return m_type;}
 
-    std::string_view getTypeStr()const{
-        switch (m_type) {
-            case Type::strength: return "strength";
-            case Type::poison: return "poison";
-            case Type::health: return "health";
-        }
-    }
+
 
     int getHealth() const{return m_health;}
     int getDamage() const{return m_damage;}
@@ -51,6 +46,15 @@ public:
         return data.at(uid(random::mt));
     }
 
+    friend inline std::ostream& operator<< (std::ostream& out, Potion& potion){
+        switch (potion.m_type) {
+            case Type::strength: out<< "strength";break;
+            case Type::poison: out<< "poison";break;
+            case Type::health: out<< "health";break;
+        }
+
+        return out;
+    }
 
 private:
 
