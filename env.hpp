@@ -22,6 +22,7 @@ public:
     void encounterMonster()
     {
         Monster monster{Monster::getRandomMonster()};
+        std::cout<<"this monster is of family "<<monster.getName()<<std::endl;
         input::MonBe work{input::getMonBeInput()};
 
         switch (work) {
@@ -32,19 +33,27 @@ public:
                     std::cout<<"oh, you killed this stupid "<<monster.getName();
                     m_player.addGold(monster.getGold());
                     m_player.levelUp();
+                    break;
 
                 }else{
                     if(random::putP<50>()){
                         std::cout<<"nooo, it is still alive. it is harming you!"<<std::endl;
                         m_player.reduceHealth(monster.getDamage());
+                        break;
                     }
                 }
+
+                std::cout<<"ohh, you just escaped"<<std::endl;
+                break;
             case input::MonBe::Run:
 
                 if(random::putP<50>()){
                     std::cout<<"nooo, it is chasing you. damag ahhhh!!!"<<std::endl;
                     m_player.reduceHealth(monster.getDamage());
+                    break;
                 }
+                std::cout<<"ohh, you just escaped"<<std::endl;
+                break;
         }
     }
 

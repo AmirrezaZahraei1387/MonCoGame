@@ -30,7 +30,7 @@ public:
     }
 
     int getLevel() const{ return m_level;}
-    bool hasWon() const{return m_level >= 20;}
+    bool hasWon() const{return m_level >= 10;}
 
     friend inline std::ostream& operator<< (std::ostream& out, Player& player){
         out<<player.m_name<<" is in level "<<player.m_level<<std::endl;

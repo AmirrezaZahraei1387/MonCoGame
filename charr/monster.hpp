@@ -44,7 +44,6 @@ private:
                   { "orc", 'o', 4, 2, 25 },
                   { "slime", 's', 1, 1, 10 } }
         };
-
         return data.at(static_cast<size_t>(type));
     }
 

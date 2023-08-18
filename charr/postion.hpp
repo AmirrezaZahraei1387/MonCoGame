@@ -37,11 +37,11 @@ public:
     {
 
         static std::array<Potion, static_cast<size_t>(Type::max_type)> data{
-                {{Type::health, 2, 2},
-                {Type::strength, 3, 3},
+                {{Type::health, 3, 0},
+                {Type::strength, 0, 3},
                 {Type::poison, -1, 0}}
         };
-        static std::uniform_int_distribution<> uid(0, static_cast<size_t>(Type::max_type));
+        static std::uniform_int_distribution<> uid(0, static_cast<size_t>(Type::max_type)-1);
 
         return data.at(uid(random::mt));
     }

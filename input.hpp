@@ -50,8 +50,8 @@ namespace input{
             std::cin>>c;
 
             switch(c){
-                case 'D': return Drink::Drin;
-                case 'S': return Drink::DoNot;
+                case 'd': return Drink::Drin;
+                case 's': return Drink::DoNot;
                 default: std::cout<<"what is this. just drink or stop."<<std::endl;
             }
 
