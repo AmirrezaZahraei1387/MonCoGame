@@ -18,8 +18,11 @@ public:
     {
     }
 
+    void encounterMonster()
+    {
+        Monster monster{Monster::getRandomMonster()};
 
-
+    }
 
 private:
     Player& m_player;
