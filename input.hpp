@@ -11,9 +11,15 @@ namespace input{
     enum class MonBe{
         Run,
         Fight,
+        Error,
     };
 
-    MonBe getMoBeInput()
+    enum Drink{
+        Drin,
+        DoNot,
+    };
+
+    inline MonBe getMonBeInput()
     {
         char c{};
 
@@ -25,6 +31,28 @@ namespace input{
                 case 'R': return MonBe::Run;
                 case 'F': return MonBe::Fight;
                 default: std::cout<<"what is this. just run or fight."<<std::endl;
+            }
+
+            if(!std::cin){
+                std::cin.clear();
+
+            }
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+
+    inline Drink getDrinkInput()
+    {
+        char c{};
+
+        while(true) {
+            std::cout << "drink or stop(d, s)" << std::endl;
+            std::cin>>c;
+
+            switch(c){
+                case 'D': return Drink::Drin;
+                case 'S': return Drink::DoNot;
+                default: std::cout<<"what is this. just drink or stop."<<std::endl;
             }
 
             if(!std::cin){

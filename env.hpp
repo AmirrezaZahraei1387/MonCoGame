@@ -22,7 +22,7 @@ public:
     void encounterMonster()
     {
         Monster monster{Monster::getRandomMonster()};
-        input::MonBe work{input::getMoBeInput()};
+        input::MonBe work{input::getMonBeInput()};
 
         switch (work) {
             case input::MonBe::Fight:
@@ -31,9 +31,34 @@ public:
                 if(monster.isDead()){
                     std::cout<<"oh, you killed this stupid "<<monster.getName();
                     m_player.addGold(monster.getGold());
-                }else{
+                    m_player.levelUp();
 
+                }else{
+                    if(random::putP<50>()){
+                        std::cout<<"nooo, it is still alive. it is harming you!"<<std::endl;
+                        m_player.reduceHealth(monster.getDamage());
+                    }
                 }
+            case input::MonBe::Run:
+
+                if(random::putP<50>()){
+                    std::cout<<"nooo, it is chasing you. damag ahhhh!!!"<<std::endl;
+                    m_player.reduceHealth(monster.getDamage());
+                }
+        }
+    }
+
+    void putPotion()
+    {
+        if(random::putP<30>()){
+            Potion potion{Potion::getRandomPotion()};
+            input::Drink drink{input::getDrinkInput()};
+
+            switch(drink){
+                case input::Drink::Drin:
+                    m_player.drink(potion)
+                    std::cout<<"that was "<<
+            }
         }
     }
 

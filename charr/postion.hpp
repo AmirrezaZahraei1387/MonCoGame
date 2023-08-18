@@ -26,6 +26,15 @@ public:
     }
 
     Type getType() const{return m_type;}
+
+    std::string_view getTypeStr()const{
+        switch (m_type) {
+            case Type::strength: return "strength";
+            case Type::poison: return "poison";
+            case Type::health: return "health";
+        }
+    }
+
     int getHealth() const{return m_health;}
     int getDamage() const{return m_damage;}
 
