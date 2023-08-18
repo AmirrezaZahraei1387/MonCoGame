@@ -16,12 +16,17 @@ public:
     m_damage{damage}, m_gold{gold}
     {}
 
-
     std::string_view getName() const{return m_name;}
     char getSymbol() const{return m_symbol;}
     int getHealth() const{return m_health;}
     int getDamage() const{return m_damage;}
     int getGold() const{return m_gold;}
+
+
+    bool isDead() const{return m_health <= 0;}
+    void reduceHealth(int damage){m_health -= damage;}
+    void addGold(int gold){m_gold += gold;}
+
 private:
     std::string_view m_name{};
     char m_symbol{};
