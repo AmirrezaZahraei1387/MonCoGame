@@ -1,0 +1,3 @@
+E:/Github-Repos/covv-gme/cmake-build-debug/CMakeFiles/covv_gme.dir
+E:/Github-Repos/covv-gme/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Github-Repos/covv-gme/cmake-build-debug/CMakeFiles/rebuild_cache.dir
