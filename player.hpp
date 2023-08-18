@@ -21,6 +21,7 @@ public:
         m_damage += 1;
     }
 
+
     int getLevel() const{ return m_level;}
     bool hasWon() const{return m_level >= 20;}
 
