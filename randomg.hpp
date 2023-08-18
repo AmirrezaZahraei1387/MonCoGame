@@ -10,6 +10,14 @@
 namespace random{
     inline std::random_device rd;
     inline std::mt19937 mt{rd()};
+
+    template<int prec>
+    inline bool putP()
+    {
+        static std::uniform_int_distribution<> uid(0, 100);
+        return uid(mt) <= prec;
+
+    }
 }
 
 #endif //COVV_GME_RANDOMG_HPP

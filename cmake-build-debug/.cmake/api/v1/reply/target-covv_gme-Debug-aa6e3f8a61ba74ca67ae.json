@@ -119,22 +119,22 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "creature.hpp",
+			"path" : "charr/creature.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "player.hpp",
+			"path" : "charr/player.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "monster.hpp",
+			"path" : "charr/monster.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "postion.hpp",
+			"path" : "charr/postion.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

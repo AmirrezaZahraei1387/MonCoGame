@@ -5,7 +5,7 @@
 #define COVV_GME_POSTION_HPP
 
 #include <random>
-#include "randomg.hpp"
+#include "../randomg.hpp"
 #include <array>
 #include <cstddef>
 
@@ -37,10 +37,11 @@ public:
                 {Type::strength, 3, 3},
                 {Type::poison, -1, 0}}
         };
-        std::uniform_int_distribution<> uid(0, static_cast<size_t>(Type::max_type));
+        static std::uniform_int_distribution<> uid(0, static_cast<size_t>(Type::max_type));
 
         return data.at(uid(random::mt));
     }
+
 
 private:
 

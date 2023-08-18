@@ -5,7 +5,7 @@
 #define COVV_GME_MONSTER_HPP
 
 #include <random>
-#include "randomg.hpp"
+#include "../randomg.hpp"
 #include <cstddef>
 #include <array>
 #include "creature.hpp"

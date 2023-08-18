@@ -4,9 +4,10 @@
 #ifndef COVV_GME_ENV_HPP
 #define COVV_GME_ENV_HPP
 
-#include "player.hpp"
-#include "monster.hpp"
-#include "postion.hpp"
+#include "charr/player.hpp"
+#include "charr/monster.hpp"
+#include "charr/postion.hpp"
+#include "input.hpp"
 
 
 class WorldEnv{
@@ -21,7 +22,19 @@ public:
     void encounterMonster()
     {
         Monster monster{Monster::getRandomMonster()};
+        input::MonBe work{input::getMoBeInput()};
 
+        switch (work) {
+            case input::MonBe::Fight:
+                monster.reduceHealth(m_player.getDamage());
+
+                if(monster.isDead()){
+                    std::cout<<"oh, you killed this stupid "<<monster.getName();
+                    m_player.addGold(monster.getGold());
+                }else{
+
+                }
+        }
     }
 
 private:

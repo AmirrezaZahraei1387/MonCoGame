@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include "creature.hpp"
-#include "player.hpp"
-#include "monster.hpp"
+#include "charr/creature.hpp"
+#include "charr/player.hpp"
+#include "charr/monster.hpp"
 #include <random>
 
 int main()
