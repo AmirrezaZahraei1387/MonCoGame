@@ -3,4 +3,4 @@ project(covv_gme)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(covv_gme main.cpp creature.hpp player.hpp monster.hpp)
+add_executable(covv_gme main.cpp creature.hpp player.hpp monster.hpp postion.hpp)
