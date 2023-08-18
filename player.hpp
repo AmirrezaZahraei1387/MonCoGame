@@ -6,6 +6,7 @@
 
 #include <string_view>
 #include "creature.hpp"
+#include "postion.hpp"
 
 class Player: public Creature{
 
@@ -21,6 +22,11 @@ public:
         m_damage += 1;
     }
 
+    void drink(Potion& potion)
+    {
+    m_health += potion.getHealth();
+    m_damage += potion.getDamage();
+    }
 
     int getLevel() const{ return m_level;}
     bool hasWon() const{return m_level >= 20;}
